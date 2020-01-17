@@ -12,6 +12,10 @@
     <body>
         <div class="page-header"> <!-- dodanie klasy -->
             <h1><a href="/">Thewitcher's blog</a></h1>
+            {% if user.is_authenticated %} <!-- tag, który sprawia że link bedzie widoczny tylko dla zalogowanych uzytkownikow jako admin-->
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <!-- klasa glyphicon.. jest dostarczana prze zmotyw z bootstrapa ktorego uzywamy i wyswietli znak plus -->
+            {% endif %}
         </div>
         <div class="content container">
             <div class="row">
